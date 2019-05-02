@@ -1,7 +1,7 @@
-import { Polymer } from '../../@polymer/polymer/lib/legacy/polymer-fn.js';
-import { IronResizableBehavior } from '../../@polymer/iron-resizable-behavior/iron-resizable-behavior.js';
-import { html } from '../../@polymer/polymer/lib/utils/html-tag.js';
-import '../../@em-polymer/google-apis/google-maps-api.js';
+import { Polymer } from '@polymer/polymer/lib/legacy/polymer-fn.js';
+import { IronResizableBehavior } from '@polymer/iron-resizable-behavior/iron-resizable-behavior.js';
+import { html } from '@polymer/polymer/lib/utils/html-tag.js';
+import '@em-polymer/google-apis/google-maps-api.js';
 import './google-map-marker.js';
 
 
