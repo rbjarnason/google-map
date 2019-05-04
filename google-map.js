@@ -624,6 +624,10 @@ Polymer({
       m.marker.setMap(null);
     }
   },
+    
+  triggerMarkerClick(id) {
+    google.maps.event.trigger(this.markers[id].marker, 'click');
+  },
 
   /**
    * Explicitly resizes the map, updating its center. This is useful if the
