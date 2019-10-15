@@ -249,6 +249,7 @@ Polymer({
   detached() {
     if (this.marker) {
       google.maps.event.clearInstanceListeners(this.marker);
+      this._clickEventsChanged(true);
       this._listeners = {};
       this.marker.setMap(null);
     }
@@ -268,9 +269,9 @@ Polymer({
     }
   },
 
-  _clickEventsChanged() {
+  _clickEventsChanged(forceRemove) {
     if (this.map) {
-      if (this.clickEvents) {
+      if (this.clickEvents && !forceRemove) {
         this._forwardEvent('click');
         this._forwardEvent('dblclick');
         this._forwardEvent('rightclick');
@@ -418,7 +419,7 @@ Polymer({
   },
 
   _clearListener(name) {
-    if (this._listeners[name]) {
+    if (this._listeners && this._listeners[name]) {
       google.maps.event.removeListener(this._listeners[name]);
       this._listeners[name] = null;
     }
